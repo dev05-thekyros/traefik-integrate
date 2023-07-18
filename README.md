@@ -21,7 +21,7 @@ First of all, what is Treaefik proxy - Traefik is based on the concept of EntryP
 ### Workflow diagram
 * User need authn and then authorize to be identity and get list permission before access internal resource.
 * When user request to access internal resource. They must provide JWT to identity. After success validation JWT in SSO service. Gateway will transfer request to internal resource to verify and claim resource. Finally, gateway will return result to User through Application
-![](./static/Excalidraw 2023-07-18 09-58-26.png)Overview workflow
+![](./static/workflow.png)Overview workflow
 
 ![](./static/overview.png)System Architect
 
