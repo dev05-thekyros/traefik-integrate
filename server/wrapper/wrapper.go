@@ -1,9 +1,9 @@
 package wrapper
 
 import (
-	"github.com/hungvtc/traefik-integrate/sso-server/config"
-	"github.com/hungvtc/traefik-integrate/sso-server/repository"
-	"github.com/hungvtc/traefik-integrate/sso-server/service/go-kontrol"
+	"github.com/hungvtc/traefik-integrate/server/config"
+	"github.com/hungvtc/traefik-integrate/server/repository"
+	"github.com/hungvtc/traefik-integrate/server/service/go-kontrol"
 	"github.com/neko-neko/echo-logrus/v2/log"
 )
 

@@ -56,6 +56,9 @@ func (k DefaultKontrol) ValidateToken(c context.Context, jwtToken string, reqPat
 		if err == jwt.ErrSignatureInvalid {
 			return nil, err
 		}
+		if tkn == nil {
+			return nil, errors.New("Token is invalid ")
+		}
 	}
 	if !tkn.Valid {
 		return nil, errors.New("Token is invalid ")
@@ -95,7 +98,7 @@ func (k DefaultKontrol) ValidateToken(c context.Context, jwtToken string, reqPat
 	return object, nil
 }
 
-//IssueCertForService issue cert for issed time, does not authen, must be authen-ed beforehand
+//IssueCertForService issue cert for issued time, does not authn, must be authn-ed beforehand
 func (k DefaultKontrol) IssueCertForService(ctx context.Context, objID string, serID string) (*ObjectPermission, error) {
 	// check object
 	obj, err := k.store.GetObjectByID(ctx, objID)

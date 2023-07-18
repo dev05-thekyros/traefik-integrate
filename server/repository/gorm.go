@@ -3,9 +3,9 @@ package repository
 import (
 	"context"
 	"encoding/json"
-	"github.com/hungvtc/traefik-integrate/sso-server/config"
-	"github.com/hungvtc/traefik-integrate/sso-server/constant"
-	"github.com/hungvtc/traefik-integrate/sso-server/service/go-kontrol"
+	"github.com/hungvtc/traefik-integrate/server/config"
+	"github.com/hungvtc/traefik-integrate/server/constant"
+	"github.com/hungvtc/traefik-integrate/server/service/go-kontrol"
 	"time"
 
 	"github.com/google/uuid"

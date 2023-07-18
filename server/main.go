@@ -3,11 +3,11 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/hungvtc/traefik-integrate/sso-server/config"
-	storage2 "github.com/hungvtc/traefik-integrate/sso-server/repository"
-	"github.com/hungvtc/traefik-integrate/sso-server/service/go-kontrol"
-	"github.com/hungvtc/traefik-integrate/sso-server/transport"
-	"github.com/hungvtc/traefik-integrate/sso-server/wrapper"
+	"github.com/hungvtc/traefik-integrate/server/config"
+	"github.com/hungvtc/traefik-integrate/server/repository"
+	"github.com/hungvtc/traefik-integrate/server/service/go-kontrol"
+	"github.com/hungvtc/traefik-integrate/server/transport"
+	"github.com/hungvtc/traefik-integrate/server/wrapper"
 	"os"
 	"strings"
 	"time"
@@ -47,16 +47,16 @@ func main() {
 		logger.Fatal(err)
 	}
 	//DB
-	gormdb, err := storage2.ConnectMySQL(cfg.MySQL)
+	gormdb, err := repository.ConnectMySQL(cfg.MySQL)
 	if err != nil {
 		logger.Fatal(err)
 	}
 
 	// storage
-	storage := storage2.NewGormStorage()
+	storage := repository.NewGormStorage()
 
 	// kontrol
-	storagekontrol := storage2.NewKontrolStorage()
+	storagekontrol := repository.NewKontrolStorage()
 	kontrol := gokontrol.NewBasicKontrol(storagekontrol)
 
 	ser := &wrapper.Service{
